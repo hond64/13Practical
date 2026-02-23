@@ -50,18 +50,14 @@ public class timeMethods{
             time = (finish - start)/ 1_000_000.0;
             binaryTime += time;
             binaryTimesq = time * time;
+        }
+        double linearAve = linearTime / repetitions;
+        double linearstd = Math.sqrt((linearTimesq-repetitions*linearAve*linearstd)/(repetitions-1));
 
+        
             
 
-            finish = System.currentTimeMillis();
-
-            time = (double)(finish - start);
-            runTime += time;
-            runTime2 += (time*time); }
-
-        double aveRuntime = runTime/repetitions;
-        double stdDeviation =
-                Math.sqrt(runTime2 - repetitions*aveRuntime*aveRuntime)/(repetitions-1);
+   
 
         System.out.printf("\n\n\fStatistics\n");
         System.out.println("________________________________________________");
