@@ -54,7 +54,8 @@ public class timeMethods{
         double linearAve = linearTime / repetitions;
         double linearstd = Math.sqrt((linearTimesq-repetitions*linearAve*linearstd)/(repetitions-1));
 
-        
+        double binaryAve = binaryTime / repetitions;
+        double binarystd = Math.sqrt((binaryTimesq-repetitions*binaryAve*linearstd)/(repetitions-1));
             
 
    
