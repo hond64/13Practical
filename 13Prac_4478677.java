@@ -4,7 +4,15 @@
 import java.lang.Math.*;   import java.io.*;   import java.text.*;
 
 public class timeMethods{
-    public static int N = ....;
+    public static int N;
+    static class Node{
+        int key;
+        String data;
+        Node(int key, String data){
+            this.key = key;
+            this.data = data;
+        }
+    }
     public static void main(String args[]){
 
         DecimalFormat twoD = new DecimalFormat("0.00");
@@ -55,5 +63,7 @@ public class timeMethods{
     static void oneofyourMethods(int n,
                                  yourMethodParameter1,
                                  yourMethodParameter2, . . . ) {
-// The declarations and body of your method / s
-// The final statement of this code.} }
+    // The declarations and body of your method / s
+    // The final statement of this code.} 
+    }
+}
