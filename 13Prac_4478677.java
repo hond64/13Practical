@@ -2,6 +2,7 @@
 //4478677
 //Practical 3
 import java.lang.Math.*;   import java.io.*;   import java.text.*;
+import java.util.*;
 
 public class timeMethods{
     public static int N;
@@ -13,8 +14,8 @@ public class timeMethods{
             this.data = data;
         }
     }
-    public static void main(String args[]){
-        loadfile("ulysses.numbered");
+    public static void main(String args[])throws Exception{
+        loadFile("ulysses.numbered");
 
         DecimalFormat twoD = new DecimalFormat("0.00");
         DecimalFormat fourD = new DecimalFormat("0.0000");
@@ -62,24 +63,25 @@ public class timeMethods{
 
         System.out.printf("\n\n\fStatistics\n");
         System.out.println("________________________________________________");
-        System.out.println("Total time   =           " + runTime/1000 + "s.");
-        System.out.println("Total time\u00b2  =           " + runTime2);
-        System.out.println("Average time =           " + fiveD.format(aveRuntime/1000)
+
+        System.out.println("Linear Search Average Time =           " + fiveD.format(linearAve)
                 + "s. " + '\u00B1' + " " + fourD.format(stdDeviation) + "ms.");
-        System.out.println("Standard deviation =     " + fourD.format(stdDeviation));
+        System.out.println("Linear Search Standard Deviation =     " + fourD.format(linearstd));
         System.out.println("n            =           " + n);
-        System.out.println("Average time / run =     " + fiveD.format(aveRuntime/n*1000)
-                + '\u00B5' + "s. ");
+        System.out.println("Binary Search Average Time =     " + fiveD.format(binaryAve));
+        System.out.println("Binary Search Standard Deviation =     " + fourD.format(binarystd));
 
         System.out.println("Repetitions  =             " + repetitions);
         System.out.println("________________________________________________");
         System.out.println();
-        System.out.println(); }	}
+        System.out.println(); }	
+    static void loadFile(String filename) throws Exception{
+        BufferedReader br = new BufferedReader(new FileReader(filename));
+        Arraylist<Node> list = new Arraylist<>();
 
-    static void oneofyourMethods(int n,
-                                 yourMethodParameter1,
-                                 yourMethodParameter2, . . . ) {
-    // The declarations and body of your method / s
-    // The final statement of this code.} 
+        String
     }
 }
+
+
+
