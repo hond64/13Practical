@@ -14,25 +14,38 @@ public class timeMethods{
         }
     }
     public static void main(String args[]){
+        loadfile("ulysses.numbered");
 
         DecimalFormat twoD = new DecimalFormat("0.00");
         DecimalFormat fourD = new DecimalFormat("0.0000");
         DecimalFormat fiveD = new DecimalFormat("0.00000");
 
-        long start, finish;
-        double runTime = 0, runTime2 = 0, time;
-        double totalTime = 0.0;
-        int n = N;
-        int repetition, repetitions = 30;
+        int repetitions = 30;
+        Random rand = new Random;
+        double linearTime = 0;
+        double linearTimesq = 0;
+        double binaryTime = 0;
+        double binaryTimesq = 0;
+
+
+        
+
+
 
         runTime = 0;
-        for(repetition = 0; repetition < repetitions; repetition++) {
-            start = System.currentTimeMillis();
+        for(int i = 0; i < repetitions; repetition++) {
+            int randomkey = rand.nextInt(32654)+1;
 
-            // call the procedures to time here:
-            linearsearch (...);
-            binarysearch (...);
-            // Figure out how to alter this guideline here,
+            long start = System.nanoTime();
+            LinearSearch(randomkey);
+            long finish = System.nanoTime();
+            double time = (finish-start) / 1_000_000.0;
+            linearTime += time;
+            linearTimesq += time*time;
+
+            //Binary
+
+            
 
             finish = System.currentTimeMillis();
 
