@@ -44,6 +44,12 @@ public class timeMethods{
             linearTimesq += time*time;
 
             //Binary
+            start = System.nanoTime();
+            binarySearch(randomkey);
+            finish = System.nanoTime();
+            time = (finish - start)/ 1_000_000.0;
+            binaryTime += time;
+            binaryTimesq = time * time;
 
             
 
