@@ -1,4 +1,6 @@
-// Code is stored as 13template.java
+// Miguel Wentzel
+//4478677
+//Practical 3
 import java.lang.Math.*;   import java.io.*;   import java.text.*;
 
 public class timeMethods{
