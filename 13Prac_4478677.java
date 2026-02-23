@@ -1,11 +1,17 @@
 // Miguel Wentzel
 //4478677
 //Practical 3
-import java.lang.Math.*;   import java.io.*;   import java.text.*;
+
+import java.lang.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.text.DecimalFormat;
 import java.util.*;
+import java.util.ArrayList;
 
 public class timeMethods{
     public static int N;
+    static Node[] array;
     static class Node{
         int key;
         String data;
@@ -22,19 +28,19 @@ public class timeMethods{
         DecimalFormat fiveD = new DecimalFormat("0.00000");
 
         int repetitions = 30;
-        Random rand = new Random;
+        Random rand = new Random();
         double linearTime = 0;
         double linearTimesq = 0;
         double binaryTime = 0;
         double binaryTimesq = 0;
 
 
-        
 
 
 
-        runTime = 0;
-        for(int i = 0; i < repetitions; repetition++) {
+
+       ;
+        for(int i = 0; i < repetitions; i++) {
             int randomkey = rand.nextInt(32654)+1;
 
             long start = System.nanoTime();
@@ -53,21 +59,20 @@ public class timeMethods{
             binaryTimesq = time * time;
         }
         double linearAve = linearTime / repetitions;
-        double linearstd = Math.sqrt((linearTimesq-repetitions*linearAve*linearstd)/(repetitions-1));
+        double linearstd = Math.sqrt((linearTimesq-repetitions*linearAve*linearAve)/(repetitions-1));
 
         double binaryAve = binaryTime / repetitions;
-        double binarystd = Math.sqrt((binaryTimesq-repetitions*binaryAve*linearstd)/(repetitions-1));
-            
+        double binarystd = Math.sqrt((binaryTimesq-repetitions*binaryAve*binaryAve)/(repetitions-1));
 
-   
+
+
 
         System.out.printf("\n\n\fStatistics\n");
         System.out.println("________________________________________________");
 
-        System.out.println("Linear Search Average Time =           " + fiveD.format(linearAve)
-                + "s. " + '\u00B1' + " " + fourD.format(stdDeviation) + "ms.");
+        System.out.println("Linear Search Average Time =           " + fiveD.format(linearAve));
         System.out.println("Linear Search Standard Deviation =     " + fourD.format(linearstd));
-        System.out.println("n            =           " + n);
+        System.out.println("n            =           " + N);
         System.out.println("Binary Search Average Time =     " + fiveD.format(binaryAve));
         System.out.println("Binary Search Standard Deviation =     " + fourD.format(binarystd));
 
@@ -75,14 +80,14 @@ public class timeMethods{
         System.out.println("________________________________________________");
         System.out.println();
         System.out.println();
-         }	
+    }
     static void loadFile(String filename) throws Exception{
         BufferedReader br = new BufferedReader(new FileReader(filename));
-        Arraylist<Node> list = new Arraylist<>();
+        ArrayList<Node> list = new ArrayList<>();
 
         String line;
 
-        while ((line= br.readline())!= null){
+        while ((line= br.readLine())!= null){
             if (line.trim().length()==0) continue;
 
             String keyString = line.substring(0, 5).trim();
@@ -96,7 +101,7 @@ public class timeMethods{
         array = list.toArray(new Node[N]);
 
     }
-    static node binaryAve(int key){
+    static Node binarySearch(int key){
         int low = 0;
         int high = N - 1;
 
@@ -111,6 +116,16 @@ public class timeMethods{
                 high = mid - 1;
             }
         }
+        return null;
+    }
+    static Node LinearSearch(int key){
+        for (int i = 0; i < N;i++){
+            if(array[i].key == key){
+                return array[i];
+            }
+
+        }
+        return null;
     }
 }
 
