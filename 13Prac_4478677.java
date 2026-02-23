@@ -74,12 +74,35 @@ public class timeMethods{
         System.out.println("Repetitions  =             " + repetitions);
         System.out.println("________________________________________________");
         System.out.println();
-        System.out.println(); }	
+        System.out.println();
+         }	
     static void loadFile(String filename) throws Exception{
         BufferedReader br = new BufferedReader(new FileReader(filename));
         Arraylist<Node> list = new Arraylist<>();
 
-        String
+        String line;
+
+        while ((line= br.readline())!= null){
+            if (line.trim().length()==0) continue;
+
+            String keyString = line.substring(0, 5).trim();
+            int key = Integer.parseInt(keyString);
+            String data = line.substring(5).trim();
+
+            list.add(new Node(key, data));
+        }
+        br.close();
+        N = list.size();
+        array = list.toArray(new Node[N]);
+
+    }
+    static node LinearSearch(int key){
+        int low = 0;
+        int high = N - 1;
+
+        while (low<= high){
+            int
+        }
     }
 }
 
