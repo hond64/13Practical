@@ -96,12 +96,20 @@ public class timeMethods{
         array = list.toArray(new Node[N]);
 
     }
-    static node LinearSearch(int key){
+    static node binaryAve(int key){
         int low = 0;
         int high = N - 1;
 
         while (low<= high){
-            int
+            int mid = (low + high)/2;
+            if (array[mid].key == key){
+                return array[mid];
+            }
+            if (array[mid].key < key){
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
         }
     }
 }
